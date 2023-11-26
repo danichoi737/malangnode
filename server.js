@@ -1,12 +1,9 @@
-import dotenv from "dotenv";
+import "dotenv/config.js";
 import express from "express";
 // Routers
 import router from "./routes/index.js";
 // Modules
 import websocket from "./src/websocket.js";
-
-// dotenv
-dotenv.config();
 
 // Express
 const HTTP_PORT = "HTTP_PORT";
