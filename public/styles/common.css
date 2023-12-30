@@ -5,11 +5,13 @@
   --body-font-family: var(--font-sans-serif);
 
   /* Button */
+  --button-bg-color: #0d6efd;
+  --button-hover-bg-color: #0b5ed7;
+  --button-color: #fff;
   --button-border-radius: 0.5rem;
   --button-border-width: 1px;
   --button-border-color: var(--button-bg-color);
-  --button-bg-color: #0d6efd;
-  --button-color: #fff;
+  --button-hover-border-color: var(--button-hover-bg-color);
   --button-padding-x: 1rem;
   --button-padding-y: 0.5rem;
 }
@@ -33,4 +35,12 @@ button {
   color: var(--button-color);
   border: var(--button-border-width) solid var(--button-border-color);
   padding: var(--button-padding-y) var(--button-padding-x);
+  transition:
+    background-color 0.15s ease-in-out,
+    bordor-color 0.15s ease-in-out;
+}
+
+.button:hover {
+  background-color: var(--button-hover-bg-color);
+  border-color: var(--button-hover-border-color);
 }
