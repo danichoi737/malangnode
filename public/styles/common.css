@@ -30,6 +30,10 @@ button {
   font-family: inherit;
 }
 
+video {
+  background-color: #222;
+}
+
 .button {
   background-color: var(--button-bg-color);
   color: var(--button-color);
