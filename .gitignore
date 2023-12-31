@@ -1,3 +1,6 @@
+# certs
+cert/
+
 # npm
 node_modules/
 
