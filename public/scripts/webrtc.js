@@ -1,11 +1,13 @@
 const rtcVideo = document.getElementById("rtc-video");
 const rtcRemoteVideo = document.getElementById("rtc-remote-video");
 const rtcStartButton = document.getElementById("rtc-start");
+const rtcCallButton = document.getElementById("rtc-call");
 const rtcRecvOnlyButton = document.getElementById("rtc-recvonly");
 
 const websocket = io();
 
 rtcStartButton.addEventListener("click", start);
+rtcCallButton.addEventListener("click", call);
 rtcRecvOnlyButton.addEventListener("click", startRecvOnly);
 
 let stream = null;
@@ -50,7 +52,9 @@ async function start() {
   peerConnection.addEventListener("track", handleTrackEvent);
 
   stream.getTracks().forEach((track) => peerConnection.addTrack(track, stream));
+}
 
+async function call() {
   const offer = await peerConnection.createOffer();
   peerConnection.setLocalDescription(offer);
   websocket.emit("offer", offer);
